@@ -1,0 +1,27 @@
+.footer {
+	margin-top: 20px;
+	border-top: 1px solid #cecece;
+	padding: 30px 0;
+
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    /* overflow-x: hidden; */
+}
+
+.logo-footer {
+	position: relative;
+	max-width: 2.0em;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.mh-footer__sm-icon {
+	max-width: 2.0em;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.mh-footer_description {
+	font-size: 11px;
+}

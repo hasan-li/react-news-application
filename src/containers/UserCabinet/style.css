@@ -1,0 +1,55 @@
+.rwt__tablist:not([aria-orientation="vertical"]) .rwt__tab[aria-selected="true"]:after {
+	border-bottom: 3px solid #2A0718;
+}
+
+.rwt__tablist[aria-orientation="vertical"] .rwt__tab[aria-selected="true"]:after {
+	border-right: 3px solid #2A0718;
+}
+
+.rwt__tab {
+	font-size: 1.2em;
+}
+
+.rwt__tab[aria-selected="true"] {
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.user-cabinet__user-info {
+	padding: 0px 40px;
+}
+
+.user-cabinet__user-name {
+	font-weight: bold;
+	font-size: 1.6em;
+	text-align: left;
+}
+
+.user-cabinet__user-data-item {
+	font-size: 1.4em;
+	text-align: left;
+}
+
+.user-cabinet__user-profile-pic {
+	border-radius: 200px;
+	margin: 0 auto;
+	max-width: 200px;
+}
+
+.user-cabinet__save-btn {
+	position: relative;
+	margin: 0 auto;
+	width: 250px;
+	background-color: #dc2c1f;
+	color: white;
+	text-align: center;
+	padding: 10px 20px;
+	font-size: 1.2em;
+	border-radius: 3px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.user-cabinet__save-btn:hover {
+	background-color: #2A0718;
+}

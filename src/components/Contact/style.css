@@ -1,0 +1,47 @@
+.mh-contact {
+	font-size: 1.5em;
+}
+
+.mh-contact__block {
+	/* margin-top: 40px; */
+}
+
+.mh-contact__email-link {
+	color: #000;
+	text-decoration: none;
+	border-bottom: solid #000 6px;
+	
+}
+.mh-contact__email-link:hover {
+	text-decoration: none;
+	color: #DC2B1E;
+	border-bottom: solid #000 6px;
+
+}
+
+.mh-contact__email{
+	font-size: 1em;
+}
+
+.mh-contact__header {
+	font-size: 150%;
+}
+
+.mh-contact__social-media-btn {
+	width: 300px;
+	text-align: center;
+}
+
+.mh-contact__content {
+	margin-top: 40px;
+}
+
+.mh-contact__design-element {
+	width: 250px;
+}
+
+@media (max-width: 600px) {
+	.mh-contact__design-element {
+		display: none;
+	}
+}

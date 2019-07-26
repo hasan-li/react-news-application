@@ -1,0 +1,64 @@
+.logo-wrapper {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.logo {
+	position: relative;
+	max-width: 4.0em;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.mh-header__auth-btn {
+	text-align: right;
+	padding-top: 25px;
+}
+
+.mh-header__auth-btn .mh-header__login-btn {
+	display: inline-block;
+	border: 1px #444 solid;
+	padding: 10px 20px;
+	border-radius: 3px;
+	background: #f9f9f9;
+	cursor: pointer;
+}
+
+.mh-header__auth-btn .mh-header__login-btn:hover {
+	background: #100516;
+	color: #fff;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.mh-header__auth-btn .mh-header__login-btn {
+		padding: 10px 10px;
+	}
+}
+
+
+.mh-header__auth-btn .mh-header__user {
+	cursor: pointer;
+	display: inline-block;
+}
+
+.mh-header__auth-btn .mh_header__user-profile-pic {
+	border-radius: 200px;
+	margin: 0 auto;
+	max-width: 40px;
+	margin-right: 10px;
+}
+
+.mh-header__auth-btn .mh-header__user-name {
+	display: inline-block;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: text-top;
+}
+
+.mh-header__auth-btn .mh-header__user-name:hover {
+	border-bottom: 1px solid #100516;
+	-webkit-transition: background-color .25s ease-out;
+	-moz-transition: background-color .25s ease-out;
+	-o-transition: background-color .25s ease-out;
+	transition: background-color .25s ease-out;
+}

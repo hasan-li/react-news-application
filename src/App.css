@@ -1,0 +1,85 @@
+@font-face {
+	font-family: ArialNU;
+	src: url(./public/fonts/ArialNU.otf);
+}
+
+@font-face {
+	font-family: Arrus;
+	src: url(./public/fonts/Arrus.ttf);
+}
+
+@font-face {
+	font-family: Baskerville;
+	src: url(./public/fonts/Baskerville.otf);
+}
+
+@font-face {
+	font-family: Didot;
+	src: url(./public/fonts/Didot.otf);
+}
+
+@font-face {
+	font-family: AvantGarde;
+	src: url(./public/fonts/AvantGarde.otf);
+}
+
+@font-face {
+	font-family: Europe;
+	src: url(./public/fonts/Europe.otf);
+}
+
+@font-face {
+	font-family: Fira-Sans__Book;
+	src: url(./public/fonts/FiraSans-Book.otf);
+}
+
+@font-face {
+	font-family: Fira-Sans__Regular;
+	src: url(./public/fonts/FiraSans-Regular.otf);
+}
+
+@font-face {
+	font-family: NewYorkMedium-Regular;
+	src: url(./public/fonts/NewYorkMedium-Regular.otf);
+}
+
+@font-face {
+	font-family: Roboto-Regular;
+	src: url(./public/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+	font-family: ClearSansRegular;
+	src: url(./public/fonts/ClearSansRegular.otf);
+}
+
+@font-face {
+	font-family: Futurica;
+	src: url(./public/fonts/Futurica.ttf);
+}
+
+@font-face {
+	font-family: FFDINProRegular;
+	src: url(./public/fonts/FFDINProRegular.otf);
+}
+
+@font-face {
+	font-family: SanFranciscoRegular;
+	src: url(./public/fonts/SanFranciscoRegular.otf);
+}
+
+body {
+	font-family: Fira-Sans__Regular;
+	background-color: #f2f2f2;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	
+}
+
+#App {
+	height: 100vh;
+}

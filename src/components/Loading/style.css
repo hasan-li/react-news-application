@@ -1,0 +1,13 @@
+.loading-spinner {
+	text-align: center;
+	margin: 20px 0;
+	overflow: hidden;
+	padding-top: 200px; 
+	vertical-align: middle;
+
+	width: 100px;
+    height: 60vh;
+
+    position: relative !important;
+    margin: 0 auto;
+}

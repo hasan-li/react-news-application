@@ -1,0 +1,120 @@
+.newsItem {
+  margin: 0px 0px;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 3px;
+  background-size: cover;
+  /* border: 1px solid #f2f2f2; */
+  box-shadow: 0 2.125px 25px -2.125px rgba(0,0,0,0.2);
+  /* box-shadow: 0 12.125px 55px -12.125px rgba(0,0,0,0.3); */
+}
+
+
+
+.news-header {
+  text-decoration: none;
+  color: #222;
+  display: inline-block;
+  margin: 20px 0px;
+
+  overflow: hidden;
+  -webkit-transition: background-color .25s ease-out;
+  -moz-transition: background-color .25s ease-out;
+  -o-transition: background-color .25s ease-out;
+  transition: background-color .25s ease-out;
+
+  position: relative;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: inherit;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  
+  margin-bottom: 0rem;
+  padding: 0px 20px;
+  line-height: 29px;
+}
+
+.news-header:hover {
+  text-decoration: none;
+  background-color: #222;
+  color: #FEFEFE;
+
+  -webkit-transition: color .35s;
+  -moz-transition: color .35s;
+  -o-transition: color .35s;
+  transition: color .35s;
+
+  border-radius: 3px;
+}
+
+/* .news-header p {
+  position: relative;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: inherit;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  
+  margin-bottom: 0rem;
+  padding: 0px 20px;
+  line-height: 29px;
+} */
+
+.newsImage {
+  width: 100%;
+  display: block;
+  z-index: 1;
+}
+
+.newsImage__block {
+  background-size: 100% 20%;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
+.news-image-details-block {
+  position: relative;
+  border-radius: 3px;
+}
+
+.news-image-details-block .news-details-block__without-image {
+  position: relative;
+  width: 100%;
+  padding: 5px 5px;
+  padding-top: 40px;
+}
+
+.news-image-details-block .news-details-block {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 50px 5px;
+  vertical-align: bottom;
+  z-index: 5;
+}
+
+.news-image-details-block .news-item-options {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  z-index: 5;
+}
+
+.news-description {
+  font-size: 1.0em;
+  padding: 0px 20px;
+  padding-bottom: 5px;
+  font-family: NewYorkMedium-Regular;
+}
+
+
+.border {
+  border: 1px solid black;
+}
