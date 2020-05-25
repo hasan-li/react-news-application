@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { createStore, applyMiddleware, compose  } from 'redux';
 import { Provider } from 'react-redux';
 import { logger } from 'redux-logger';
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import reducers from './reducers';
 import App from './App';
@@ -13,15 +13,18 @@ import rootSaga from './sagas';
 const sagaMiddleware = createSagaMiddleware();
 
 const defaultState = {
-	userState: undefined,
-	categoryState: undefined,
-	generalState: undefined,
+	auth: undefined,
+	categories: undefined,
+	app: undefined,
 	articlesState: undefined,
 };
 
 const composeEnhancers =  typeof window === 'object' && window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] ? 
 	window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__']({ }) : compose;
-const enhancer = process.env.REACT_APP_ENVIRONMENT === 'development' ? composeEnhancers(applyMiddleware(sagaMiddleware, logger)) : applyMiddleware(sagaMiddleware);
+const enhancer = process.env.REACT_APP_ENVIRONMENT === 'development'
+	// ? composeEnhancers(applyMiddleware(sagaMiddleware))
+	? composeEnhancers(applyMiddleware(sagaMiddleware))
+	: applyMiddleware(sagaMiddleware);
 
 const store = createStore(
 	reducers,

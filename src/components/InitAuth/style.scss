@@ -1,0 +1,9 @@
+@import '../../scss/colors.scss';
+
+.init-auth {
+  padding: 20px;
+  background: $yellow;
+  background: linear-gradient(180deg, $yellow 0%, $yellow-1 65%);
+  flex: 1;
+  height: 100%;
+}

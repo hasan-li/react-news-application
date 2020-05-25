@@ -1,87 +1,69 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import * as moment from 'moment';
 
 import 'moment/locale/az';
-import 'moment/locale/ru';
-import 'moment/locale/tr';
-import './style.css';
+import {
+	checkArticleContent,
+	getDateFromObjectId,
+} from './services';
+import { incrementArticleClick } from '../../actions';
+import './style.scss';
 
-import NewsDetailsBlock from '../NewsDetailsBlock'
+const NewsItem = ({
+	_id,
+	description,
+	image,
+	title,
+	primaryColor,
+	sourceUrl,
+	sourceOfficialName,
+	category,
+	link,
+}) => {
+	const [text, setText] = useState('');
+	const [articleDate, setArticleDate] = useState(moment().format('DD/MM/YYYY'));
+	const dispatch = useDispatch();
+	moment.locale('az');
 
-export default class NewsItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            description: this.props.description,
-            primaryColor: '#333333',
-            date: moment().format('DD/MM/YYYY'),
-        };
-        moment.locale('az');
-    }
+	useEffect(() => {
+		const content = checkArticleContent(description);
+		setText(content);
+		const date = getDateFromObjectId(_id);
+		setArticleDate(date);
+	});
 
-    componentWillMount() {
-        let description = this.props.description;
-        const check = description.includes('<p>The post') && description.includes('appeared first on <a rel="nofollow" href="https://infocity.az">InfoCity</a>.</p>');
-        if (check) {
-            let start = description.indexOf('<p>The post');
-            description = description.substring(0, start - 1);
-            this.setState({ description });
-        }
+	return(
+		<div className="article">
+			{image && <img src={image} alt={title} className="article__image" />}
+			<div className="article__details">
+				<div className="article__details__category">
+					#{category.toUpperCase()}
+				</div>
+				<a
+					href={link}
+					target="_blank"
+					rel='noreferrer noopener'
+					className="article__details__header"
+					onClick={() => dispatch(incrementArticleClick(_id))}
+				>
+					{title}
+				</a>
+				<div className="article__details__description">
+					{ReactHtmlParser(text)}
+				</div>
+				<div className="article__details__bottom">
+					<a href={sourceUrl} className="article__details__bottom__source" target="_blank" rel='noreferrer noopener'>
+						{sourceOfficialName}
+					</a>
+					<p className="article__details__bottom__date">
+						{articleDate}
+					</p>
+				</div>
+			</div>
+		</div>
+	);
+};
 
-        this.getDateFromObjectId(this.props._id);
-    }
-
-    async getDateFromObjectId(objectId) {
-        let date = new Date(parseInt(objectId.substring(0, 8), 16) * 1000);
-        date = await moment(date).format('DD MMMM YYYY');
-        this.setState({ date });
-    };
-
-    incrementClickNumber = () => {
-        const url = `${process.env.REACT_APP_API}news/increment/click?id=${this.props._id}`;
-		fetch(url, {
-			method: 'GET',
-			cache: 'default',
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-				'Content-Type': 'application/json; charset=utf-8',
-			}
-		})
-		.then(r => {
-			if (r.status !== 200) {
-				console.log('failed while fetching data from api');
-				return;
-			}
-        });
-    }
-
-    render() {
-        const primaryColor = '#111111';
-        return(
-            <div className="newsItem">
-                <NewsDetailsBlock
-                    image={this.props.image}
-                    title={this.props.title}
-                    primaryColor={this.props.primaryColor ? this.props.primaryColor : primaryColor}
-                    date={this.state.date}
-                    sourceUrl={this.props.sourceUrl}
-                    sourceOfficialName={this.props.sourceOfficialName}
-                    category={this.props.category}
-                />
-                <a
-                    href={this.props.link}
-                    target="_blank"
-                    rel='noreferrer noopener'
-                    className="news-header"
-                    onClick={this.incrementClickNumber}
-                >
-                    {this.props.title}
-                </a>
-                <div className="news-description">
-                    {ReactHtmlParser(this.state.description)}
-                </div>
-            </div>
-        );
-    }
-}
+export default NewsItem;

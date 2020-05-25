@@ -1,0 +1,20 @@
+@import '../colors.scss';
+
+@mixin category($light: false) {
+  color: $black;
+
+  @if $light == true {
+    background: $white;
+    color: $black;
+  }
+
+  margin: 10px 5px;
+  font-size: 0.8em;
+  padding: 2px 7px;
+  margin-left: 0px;
+  padding-left: 0px;
+  border-radius: 3px;
+  cursor: pointer;
+
+  font-family: FFDINProRegular;
+}

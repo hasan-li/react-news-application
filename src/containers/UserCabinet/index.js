@@ -3,9 +3,7 @@ import { Tabs, Tab, TabPanel, TabList } from 'react-web-tabs';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import { connect } from 'react-redux';
-import {
-	isMobile,
-} from 'react-device-detect';
+import { useMediaQuery } from 'react-responsive';
 
 import CategoryItem from '../../components/CategoryItem';
 import HeaderMetaTags from '../../components/HeaderMetaTags';
@@ -31,6 +29,8 @@ const UserCabinet = ({
 	const [categories, setCategories] = useState([]);
 	const [selectedCategories, setSelectedCategories] = useState([]);
 	const [deselectedCategories, setDeselectedCategories] = useState([]);
+
+	const isMobile = useMediaQuery({ maxWidth: 767 });
 
 	useEffect(() => {
 		if (user) {
@@ -136,10 +136,10 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => {
 	return ({
-		user: state.userState.user,
-		allCategories: state.categoryState.allCategories,
-		userCategoriesSetSuccess: state.userState.userCategoriesSetSuccess,
-		userCategoriesSetError: state.userState.userCategoriesSetError,
+		user: state.auth.user,
+		allCategories: state.categories.allCategories,
+		userCategoriesSetSuccess: state.auth.userCategoriesSetSuccess,
+		userCategoriesSetError: state.auth.userCategoriesSetError,
 	});
 };
 

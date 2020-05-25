@@ -10,9 +10,9 @@ import {
 } from '../constants/user';
 
 import {
-	CLEAR_NEWS,
-	FETCH_PAGINATED_NEWS,
-	SM_SET_NEXT_PAGINATION_PAGE,
+	CLEAR,
+	FETCH_PAGINATED,
+	SET_NEXT_PAGINATION_PAGE,
 } from '../constants/news';
 
 const cookies = new Cookies();
@@ -78,10 +78,10 @@ function* setUserCategories(action) {
 		return;
 	}
 	yield call(getUser);
-	yield put({ type: CLEAR_NEWS });
+	yield put({ type: CLEAR });
 	yield put({ type: SET_USER_SELECTED_CATEGORIES_SUCCESS, success: true });
-	yield put({ type: SM_SET_NEXT_PAGINATION_PAGE, nextPage: 1 });
-	yield put({ type: FETCH_PAGINATED_NEWS });
+	yield put({ type: SET_NEXT_PAGINATION_PAGE, nextPage: 1 });
+	yield put({ type: FETCH_PAGINATED });
 }
 
 export const userSagas = [

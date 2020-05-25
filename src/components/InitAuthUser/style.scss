@@ -1,0 +1,46 @@
+@import '../../scss/colors.scss';
+@import '../../scss/mixins/typography.scss';
+
+.init-auth-user {
+  &__header {
+    font-weight: bold;
+    @include font-heading-0();
+    color: $brown;
+
+    &__user-name {
+      color: $black;
+      display: inline-block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+
+      &__label {
+        flex: 3;
+        color: $brown;
+        margin: 0;
+      }
+      &__icon {
+        width: 150px;
+        flex: 1;
+        font-size: 1.5em;
+        color: $black;
+      }
+    }
+
+    &__image {
+      flex: 1;
+      width: 200px;
+      margin-top: auto;
+    }
+  }
+}

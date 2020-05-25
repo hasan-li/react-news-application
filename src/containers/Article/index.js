@@ -9,7 +9,7 @@ import 'moment/locale/ru';
 import 'moment/locale/tr';
 
 import 'react-notifications/lib/notifications.css';
-import './style.css'
+import './style.css';
 
 import {
 	fetchArticle,

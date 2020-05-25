@@ -1,0 +1,31 @@
+@import '../../scss/colors.scss';
+@import '../../scss/mixins/typography.scss';
+
+.init-auth-anon {
+  padding: 20px;
+  background: $yellow;
+  background: linear-gradient(180deg, $yellow 0%, $yellow-1 65%);
+  flex: 1;
+
+  &__welcome-image {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__login-buttons {
+    margin: 50px 0px;
+  }
+
+  &__header {
+    // font-size: 1.5em;
+    // font-family: NewYorkMedium-Regular;
+    color: $brown;
+    font-weight: bold;
+    @include font-heading-0();
+
+    &__highlighted {
+      color: $black;
+    }
+  }
+}

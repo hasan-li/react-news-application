@@ -15,7 +15,7 @@ import Footer from '../../components/Footer';
 import {
 	getUser,
 	getAllCategories,
-	displayLoginCategorySelection,
+	displayInitAuthModal,
 } from '../../actions';
 
 const Application = ({
@@ -23,8 +23,8 @@ const Application = ({
 	getAllCategories,
 	selectedCategories,
 	user,
-	displayLoginCategorySelection,
-	loginCategorySelectionVisible,
+	displayInitAuthModal,
+	initAuthModalVisible,
 	loginModalOpen,
 }) => {
 	useEffect(() => {
@@ -33,7 +33,7 @@ const Application = ({
 	}, []);
 
 	useEffect(() => {
-		displayLoginCategorySelection(
+		displayInitAuthModal(
 			!(user && user.categories && user.categories.length > 0)
 			&& !(selectedCategories.length > 0)
 			&& !loginModalOpen
@@ -70,7 +70,7 @@ const Application = ({
 				<Route path="/" exact render={
 					() =>
 						<Root
-							loginCategorySelectionVisible={loginCategorySelectionVisible}
+							initAuthModalVisible={initAuthModalVisible}
 							loginModalOpen={loginModalOpen}
 						/>
 				} />
@@ -88,15 +88,15 @@ const Application = ({
 const mapDispatchToProps = {
 	getUser,
 	getAllCategories,
-	displayLoginCategorySelection,
+	displayInitAuthModal,
 };
 
 const mapStateToProps = (state) => {
 	return ({
-		selectedCategories: state.userState.selectedCategories,
-		user: state.userState.user,
-		loginCategorySelectionVisible: state.generalState.loginCategorySelectionVisible,
-		loginModalOpen: state.generalState.loginModalOpen,
+		selectedCategories: state.auth.selectedCategories,
+		user: state.auth.user,
+		initAuthModalVisible: state.app.initAuthModalVisible,
+		loginModalOpen: state.app.loginModalOpen,
 	});
 };
 

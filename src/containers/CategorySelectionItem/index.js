@@ -70,9 +70,9 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => {
 	return ({
-		user: state.userState.user,
-		allCategories: state.categoryState.allCategories,
-		selectedCategories: state.userState.user ? state.userState.user.categories : state.userState.selectedCategories,
+		user: state.auth.user,
+		allCategories: state.categories.allCategories,
+		selectedCategories: state.auth.user ? state.auth.user.categories : state.auth.selectedCategories,
 	});
 };
 

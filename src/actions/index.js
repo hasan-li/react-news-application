@@ -12,25 +12,20 @@ export {
 } from './categories';
 
 export {
-	displayLoginCategorySelection,
+	displayInitAuthModal,
 	setLoginModalOpen,
 	setBurgerMenuStatus,
-} from './general';
+} from './app';
 
 export {
 	fetchPaginatedNews,
 	setPaginatedNews,
 	setPaginatedNewsHaveMore,
-	setLoadinArticles,
+	setLoadingArticles,
 	refreshNews,
 	clearNews,
 	fetchArticle,
 	setArticle,
 	setNewsError,
+	incrementArticleClick,
 } from './news';
-
-export {
-	fetchSMContent,
-	setPaginatedSMContent,
-	setPaginatedSMContentHaveMore,
-} from './social-media';

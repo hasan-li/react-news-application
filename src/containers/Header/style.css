@@ -5,9 +5,9 @@
 
 .logo {
 	position: relative;
-	max-width: 4.0em;
+	max-width: 2.5em;
 	margin: 0 auto;
-	margin-bottom: 20px;
+	margin: 20px 0;
 }
 
 .mh-header__auth-btn {

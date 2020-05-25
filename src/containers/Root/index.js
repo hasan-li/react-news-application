@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
 import MainPage from '../MainPage';
-import LoginCategorySelection from '../LoginCategorySelection';
+import InitAuthModal from '../InitAuthModal';
 import HeaderMetaTags from '../../components/HeaderMetaTags';
 
 import './style.css';
 
 const Root = ({
-	loginCategorySelectionVisible,
+	initAuthModalVisible,
 	loginModalOpen,
 }) => {
-	const [displayLoginCategorySelectionModal, setDisplayLoginCategorySelectionModal] = useState(false);
+	const [displayInitAuthModalModal, setDisplayLoginCategorySelectionModal] = useState(false);
 	useEffect(() => {
-		if (loginCategorySelectionVisible && !loginModalOpen) {
+		if (initAuthModalVisible && !loginModalOpen) {
 			setTimeout(() => {
 				setDisplayLoginCategorySelectionModal(true);
 			}, 5000);
@@ -20,15 +20,15 @@ const Root = ({
 			setDisplayLoginCategorySelectionModal(false);
 
 		}
-	}, [loginCategorySelectionVisible, loginModalOpen])
+	}, [initAuthModalVisible, loginModalOpen]);
 
 	return (
 		<>
 			<HeaderMetaTags />
 			<div id="App page-wrap" className="App">
 				<MainPage />
-				{displayLoginCategorySelectionModal &&
-					<LoginCategorySelection />
+				{displayInitAuthModalModal &&
+					<InitAuthModal />
 				}
 			</div>
 		</>

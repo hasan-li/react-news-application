@@ -1,13 +1,4 @@
-@font-face {
-	font-family: ArialNU;
-	src: url(./public/fonts/ArialNU.otf);
-}
-
-@font-face {
-	font-family: Arrus;
-	src: url(./public/fonts/Arrus.ttf);
-}
-
+/*
 @font-face {
 	font-family: Baskerville;
 	src: url(./public/fonts/Baskerville.otf);
@@ -24,23 +15,8 @@
 }
 
 @font-face {
-	font-family: Europe;
-	src: url(./public/fonts/Europe.otf);
-}
-
-@font-face {
 	font-family: Fira-Sans__Book;
 	src: url(./public/fonts/FiraSans-Book.otf);
-}
-
-@font-face {
-	font-family: Fira-Sans__Regular;
-	src: url(./public/fonts/FiraSans-Regular.otf);
-}
-
-@font-face {
-	font-family: NewYorkMedium-Regular;
-	src: url(./public/fonts/NewYorkMedium-Regular.otf);
 }
 
 @font-face {
@@ -49,13 +25,42 @@
 }
 
 @font-face {
+	font-family: SanFranciscoRegular;
+	src: url(./public/fonts/SanFranciscoRegular.otf);
+}
+@font-face {
+	font-family: Futurica;
+	src: url(./public/fonts/Futurica.ttf);
+}
+
+@font-face {
 	font-family: ClearSansRegular;
 	src: url(./public/fonts/ClearSansRegular.otf);
 }
 
 @font-face {
-	font-family: Futurica;
-	src: url(./public/fonts/Futurica.ttf);
+	font-family: ArialNU;
+	src: url(./public/fonts/ArialNU.otf);
+}
+
+@font-face {
+	font-family: Arrus;
+	src: url(./public/fonts/Arrus.ttf);
+}
+*/
+
+
+
+
+
+@font-face {
+	font-family: Europe;
+	src: url(./public/fonts/Europe.otf);
+}
+
+@font-face {
+	font-family: Fira-Sans__Regular;
+	src: url(./public/fonts/FiraSans-Regular.otf);
 }
 
 @font-face {
@@ -64,20 +69,52 @@
 }
 
 @font-face {
-	font-family: SanFranciscoRegular;
-	src: url(./public/fonts/SanFranciscoRegular.otf);
+	font-family: Fira-Sans__Light;
+	src: url(./public/fonts/FiraSans-Light.ttf);
 }
+
+@font-face {
+	font-family: NewYorkMedium-Regular;
+	src: url(./public/fonts/NewYorkMedium-Regular.otf);
+}
+
 
 body {
 	font-family: Fira-Sans__Regular;
-	background-color: #f2f2f2;
+	background-color: #ffffff;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
-.container {
-	
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1300px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.container {
+		max-width: 1085px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.container {
+		max-width: 840px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.container {
+		max-width: 840px;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+	.container {
+		max-width: 675px;
+	}
 }
 
 #App {

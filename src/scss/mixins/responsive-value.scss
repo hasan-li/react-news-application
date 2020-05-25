@@ -1,0 +1,11 @@
+@import "bootstrap/scss/mixins/_breakpoints.scss";
+@import "bootstrap/scss/_functions.scss";
+@import "bootstrap/scss/_variables.scss";
+
+@mixin responsive-value($property, $values) {
+  @each $breakpoint, $value in $values {
+    @include media-breakpoint-up($breakpoint) {
+      #{$property}: $value;
+    }
+  }
+}

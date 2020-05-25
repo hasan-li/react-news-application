@@ -7,7 +7,7 @@ import MetaTags from 'react-meta-tags';
 
 import LogoGather from  './LogoGather';
 
-import './style.css';
+import './style.scss';
 
 const design_element_1 = require('./../../public/assets/illustrations/design-element-1.png');
 
@@ -19,11 +19,10 @@ export default class About extends Component {
 		super(props);
 		this.state = {
 			animation: null,
-		}
+		};
 	}
 
 	render() {
-
 		const features = [
 			{
 				title: 'Kateqoriyalar',
@@ -114,6 +113,6 @@ export default class About extends Component {
 					
 				</div>
 			</>
-		)
+		);
 	}
 }

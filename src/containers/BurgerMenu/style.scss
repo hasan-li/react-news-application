@@ -1,0 +1,70 @@
+@import '../../scss/colors.scss';
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+	position: fixed;
+	width: 36px;
+	height: 30px;
+	left: 36px;
+	top: 36px;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+	height: 24px;
+	width: 24px;
+	right: 15px;
+	top: 15px;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+	height: 100%;
+	width: calc(20% + 200px) !important;
+}
+
+.burger-menu {
+	background-color: $white;
+	padding: 3.5em 0;
+	height: 100vh;
+	text-align: center;
+	font-size: 1.5em;
+
+	&__close-icon {
+		position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-size: 0px;
+    background: transparent;
+    cursor: pointer;
+	}
+
+	&__item {
+		color: $black;
+		display: block;
+		justify-content: space-between;
+		align-items: baseline;
+		margin: 20px auto;
+		padding: 20px 0;
+
+		&:hover {
+			text-decoration: none;
+			background: $grey;
+			color: $white;
+		}
+
+		&__icon {
+			width: 1.5rem;
+			margin: 0 10px;
+			margin-top: 3px;
+		}
+
+		&__label {
+			display: inline-block;
+			margin: 0;
+		}
+	}
+}

@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import {
-	isMobile,
-} from 'react-device-detect';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import logo from '../../public/assets/logo_web.png';
-import './style.css';
 
 import LoginModal from '../../components/LoginModal';
+import { Mobile } from '../../components/Viewports';
 
-// const Navbar = require("../Navbar").default;
+import './style.css';
 
 import {
 	setLoginModalOpen,
@@ -42,11 +39,11 @@ const Header = ({ user, setLoginModalOpen }) => {
 									{user.picture && (
 										<img src={user.picture} className="mh_header__user-profile-pic" alt="User avatar" />
 									)}
-									{!isMobile && (
+									<Mobile>
 										<p className="mh-header__user-name">
 											{user.displayName || user.firstName}
 										</p>
-									)}
+									</Mobile>
 								</div>
 							</Link>
 						) : (
@@ -68,7 +65,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => {
 	return ({
-		user: state.userState.user,
+		user: state.auth.user,
 	});
 };
 

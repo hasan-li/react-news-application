@@ -1,0 +1,11 @@
+@import '../../scss/colors.scss';
+
+.newsItem_placeholder {
+  position: relative;
+  background-color: $white;
+  overflow: hidden;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 500px;
+  border-radius: 3px;
+}

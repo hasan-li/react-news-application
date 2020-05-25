@@ -1,53 +1,59 @@
 import {
-	FETCH_PAGINATED_NEWS,
-	SET_PAGINATED_NEWS,
-	SET_PAGINATED_NEWS_HAS_MORE,
-	LOADING_ARTICLES,
-	REFRESH_NEWS,
-	CLEAR_NEWS,
-	FETCH_SINGLE_ARTICLE,
-	SET_SINGLE_ARTICLE,
-	ERROR_NEWS,
+	FETCH_PAGINATED,
+	SET_PAGINATED,
+	SET_PAGINATED_HAS_MORE,
+	ARTICLE_LOADING,
+	REFRESH,
+	CLEAR,
+	FETCH_SINGLE,
+	SET_SINGLE,
+	INCREMENT_CLICK_NUMBER,
+	ERROR,
 } from '../constants/news';
 
 export const fetchPaginatedNews = () => ({
-	type: FETCH_PAGINATED_NEWS,
+	type: FETCH_PAGINATED,
 });
 
 export const setPaginatedNews = (news) => ({
-	type: SET_PAGINATED_NEWS,
+	type: SET_PAGINATED,
 	news,
 });
 
 export const setPaginatedNewsHaveMore = (hasMore) => ({
-	type: SET_PAGINATED_NEWS_HAS_MORE,
+	type: SET_PAGINATED_HAS_MORE,
 	hasMore,
 });
 
-export const setLoadinArticles = (loadingArticles) => ({
-	type: LOADING_ARTICLES,
+export const setLoadingArticles = (loadingArticles) => ({
+	type: ARTICLE_LOADING,
 	loadingArticles,
 });
 
 export const refreshNews = () => ({
-	type: REFRESH_NEWS,
+	type: REFRESH,
 });
 
 export const clearNews = () => ({
-	type: CLEAR_NEWS,
+	type: CLEAR,
 });
 
 export const fetchArticle = (articleId) => ({
-	type: FETCH_SINGLE_ARTICLE,
-	articleId
+	type: FETCH_SINGLE,
+	articleId,
 });
 
 export const setArticle = (article) => ({
-	type: SET_SINGLE_ARTICLE,
-	article
+	type: SET_SINGLE,
+	article,
 });
 
-export const setNewsError = (article) => ({
-	type: ERROR_NEWS,
-	article
+export const setNewsError = (error) => ({
+	type: ERROR,
+	error,
+});
+
+export const incrementArticleClick = (id) => ({
+	type: INCREMENT_CLICK_NUMBER,
+	id,
 });

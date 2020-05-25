@@ -6,14 +6,15 @@
 
 .category-item__selected {
 	background: #dc2c1f;
-	font-family: Europe;
+	font-family: FFDINProRegular;
 	display: inline-block;
 	color: #fff;
 	margin: 5px 15px;
+	margin-left: 0;
 	text-transform: uppercase;
 	padding: 5px;
 	font-weight: bold;
-	font-size: 17px;
+	font-size: 16px;
 	cursor: pointer;
 }
 
@@ -24,16 +25,19 @@
 }
 
 .category-item {
-	font-family: Europe;
+	font-family: FFDINProRegular;
 	display: inline-block;
 	margin: 5px 15px;
+	margin-left: 0;
 	background: #f8f8f8;
 	color: #9d9d9d;
 	text-transform: uppercase;
-	padding: 5px;
+	padding: 4px;
 	font-weight: bold;
-	font-size: 17px;
+	font-size: 16px;
 	cursor: pointer;
+	border: 1px solid #f8f8f8;
+	border-radius: 3px;
 }
 
 .category-item:hover {

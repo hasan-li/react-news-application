@@ -1,0 +1,60 @@
+@import '../../scss/colors.scss';
+
+.footer {
+	margin-top: 20px;
+	border-top: 1px solid #cecece;
+	padding: 30px 0;
+	width: 100%;
+	
+	display: flex;
+
+	justify-content: space-between;
+	align-items: center;
+
+	@media all and (max-width: 640px) {
+		flex-direction: column-reverse;
+	}
+
+	&__logo {
+		max-width: 3.0em;
+		padding: 10px;
+		@media all and (max-width: 640px) {
+			margin: 0 auto;
+		}
+	}
+
+	&__description {
+		font-size: 0.8em;
+		padding: 10px;
+		max-width: 60%;
+
+		@media all and (max-width: 640px) {
+			margin: 10px auto;
+			max-width: 100%;
+		}
+	}
+
+	&__social-media {
+		display: flex;
+		justify-content: space-between;
+		@media all and (max-width: 640px) {
+			margin: 10px auto;
+		}
+
+		&__item {
+			margin: 0 10px;
+			&__icon {
+				max-width: 2.0em;
+			}
+		}
+	}
+
+	&__nav {
+		@media all and (max-width: 640px) {
+			margin: 10px auto;
+		}
+		& a {
+			color: $black;
+		}
+	}
+}

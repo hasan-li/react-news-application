@@ -1,0 +1,28 @@
+@import '../colors.scss';
+@import '../mixins/responsive-value.scss';
+@import '../functions/unit.scss';
+
+$heading-font-family: 'NewYorkMedium-Regular', sans-serif;
+$base-font-family: 'Fira-Sans__Regular', sans-serif;
+$category-font-family: 'FFDINProRegular', sans-serif;
+
+@mixin font-heading-0 {
+  font-family: $heading-font-family;
+  font-weight: normal;
+  @include responsive-value(
+    'font-size',
+    (
+      xxsmall: rem-calc(15px),
+      medium: rem-calc(20px),
+      large: rem-calc(22px),
+    )
+  );
+  @include responsive-value(
+    'line-height',
+    (
+      xxsmall: rem-calc(25px),
+      medium: rem-calc(29px),
+      large: rem-calc(27px),
+    )
+  );
+}

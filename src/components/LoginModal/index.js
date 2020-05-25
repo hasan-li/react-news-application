@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import { Link } from 'react-router-dom';
-import { GoogleLoginButton, FacebookLoginButton } from 'react-social-login-buttons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import GoogleLoginButton from 'src/components/SocialMediaButtons/GoogleLoginButton';
+import FacebookLoginButton from 'src/components/SocialMediaButtons/FacebookLoginButton';
+import { GOOGLE, FACEBOOK } from 'src/constants/socialMedia';
 
 import './style.css';
 
@@ -24,24 +27,34 @@ const LoginModal = ({ setOpenLoginModal, openLoginModal }) => {
 			shouldCloseOnOverlayClick={true}
 			shouldCloseOnEsc={true}
 		>
-			<FontAwesomeIcon icon={faTimes} className="close_btn" onClick={() => setOpenLoginModal(false)} />
+			<FontAwesomeIcon
+				icon={faTimes}
+				className="close_btn"
+				onClick={() => setOpenLoginModal(false)}
+			/>
 
 			<p className="mh-login-modal__header">
 				Xoş Gəlmişsiniz.
 			</p>
 			<p className="mh-login-modal__subtext">
-				Fərdiləşdirilmiş xəbərlər, məqalələr və bloq paylaşımlarını almaq üçün, sevdiyiniz müəllifləri və mövzularə izləmək üçün MediaHub-a daxil olun
+				Fərdiləşdirilmiş xəbərlər, məqalələr və bloq
+				paylaşımlarını almaq üçün, sevdiyiniz müəllifləri və
+				mövzularə izləmək üçün MediaHub-a daxil olun
 			</p>
-			<>
-				<FacebookLoginButton className="mh-login__login-btn" onClick={() => handleLogin('facebook')}>
-					<span>Facebook ilə daxil ol</span>
-				</FacebookLoginButton>
-				<GoogleLoginButton className="mh-login__login-btn" onClick={() => handleLogin('google')}>
-					<span>Google ilə daxil ol</span>
-				</GoogleLoginButton>
-			</>
+			<FacebookLoginButton onClick={() => handleLogin(FACEBOOK)}>
+				<span>Facebook ilə daxil ol</span>
+			</FacebookLoginButton>
+			<GoogleLoginButton onClick={() => handleLogin(GOOGLE)}
+			>
+				<span>Google ilə daxil ol</span>
+			</GoogleLoginButton>
 
-			<Link id="contact" className="menu-item" to="/contact">
+			<Link
+				id="contact"
+				className="menu-item"
+				to="/contact"
+				onClick={() => setOpenLoginModal(false)}
+			>
 				<p className="mh-login-modal__contact">Əlaqə</p>
 			</Link>
 		</ReactModal>

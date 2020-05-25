@@ -1,0 +1,67 @@
+@import '../../scss/colors.scss';
+@import '../../scss/mixins/category.scss';
+
+.article {
+  margin: 0px 0px;
+  margin-bottom: 30px;
+  background-color: $white;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+  background-size: cover;
+  box-shadow: 1px 1.125px 6px -1.125px rgba(0, 0, 0, 0.1);
+
+  &__image {
+    width: 100%;
+    display: block;
+    z-index: 1;
+  }
+
+  &__details {
+    padding: 0px 15px;
+
+    &__header {
+      text-decoration: none;
+      color: $black-1;
+      display: inline-block;
+      line-height: 29px;
+      overflow: hidden;
+      font-size: 1.15em;
+      font-weight: bold;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      word-wrap: break-word;
+  
+      &:hover {
+        text-decoration: none;
+        color: $grey;
+      }
+    }
+  
+    &__description {
+      font-size: 0.9em;
+    }
+    
+    &__category {
+      @include category();
+    }
+
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      font-family: Fira-Sans__Light;
+      font-size: 0.8em;
+      margin-top: 10px;
+      &__source {
+        color: $black;
+        &:hover {
+          color: $grey;
+        }
+      }
+      &__date {
+        color: $black;
+      }
+    }
+  }
+
+}
